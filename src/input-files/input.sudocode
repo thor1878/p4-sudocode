@@ -1,0 +1,7 @@
+rule between(min, max) expects cell:
+    for i from 1 to 9:
+        apply $cell >= min and $cell <= max
+        
+
+
+apply between(1, 9) to 1:1

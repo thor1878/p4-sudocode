@@ -1,0 +1,150 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SudoCode",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+        {
+            "include": "#control"
+        },
+        {
+            "include": "#sudoku"
+        },
+        {
+            "include": "#cells"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#vectors"
+        },
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#methods"
+		},
+		{
+			"include": "#parameters"
+		},
+		{
+			"include": "#ruleNames"
+		},
+        {
+            "include": "#brackets"
+        },
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#characters"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "markup.bold",
+				"match": "\\b(rule|apply)\\b"
+			}]
+		},
+        "control": {
+            "patterns": [{
+                "name": "keyword.control",
+                "match": "\\b(for|if|to)\\b"
+            }]
+        },
+        "sudoku": {
+            "patterns": [{
+                "name": "variable.other.constant",
+                "match": "\\b(ROWS|COLUMNS|BOXES|CELLS)\\b"
+            }]
+        },
+        "cells": {
+            "patterns": [{
+                "name": "string.quoted",
+                "match": "[0-9],[0-9]"
+            }]
+        },
+        "numbers": {
+            "patterns": [{
+                "name": "constant.numeric",
+                "match": "(?<!\\w)(\\d+?)(?!\\w)"
+            }]
+        },
+        "vectors": {
+            "patterns": [{
+                "name": "support.type",
+                "match": "v\\d*,\\d*"    
+            }]
+        },
+        "operators": {
+            "patterns": 
+            [
+                {
+                    "name": "storage.modifier",
+                    "match": "\\b(and|or)\\b"
+                },
+                {
+                    "name": "constant.character.escape",
+                    "match": "(\\||->)"
+                },
+                {
+                    "name": "keyword.operator",
+                    "match": "(==|>=|<=|\\+|-|\/|\\*)"
+                }
+            ]
+        },
+        "methods": {
+            "patterns": [{
+                "name": "support.function",
+                "match": "(?<=\\.)(\\w+)(?=\\()"
+            }]
+        },
+        "parameters": {
+            "patterns": 
+            [
+                {
+                    "name": "variable.name",
+                    "match": "(?<=(\\(.*?))(\\w+)(?=(.*?\\)))"
+                }
+            ]
+        },
+        "ruleNames": {
+            "patterns": [{
+                "name": "string.regexp",
+                "match": "(?<=((^|\n)(rule|apply).*?))(\\w+)"
+            }]
+        },
+        "brackets": {
+            "patterns": 
+            [
+                {
+                    "name": "constant.character.escape",
+                    "match": "(\\[|\\])"
+                }
+            ]
+        },
+		"comments": {
+            "patterns": 
+            [
+                {
+                    "name": "comment.line",
+                    "match": "#.*\\n"
+                },
+                {
+                    "name": "comment.line",
+                    "match": "###(.|\\s)*?###"
+                }
+            ]
+        },
+        "characters": {
+            "patterns": [{
+                "name": "variable.name",
+                "match": "\\w+"    
+            }]
+        }
+	},
+	"scopeName": "source.sudocode"
+}

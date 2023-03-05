@@ -1,0 +1,27 @@
+{
+  "publisher": "ttm",
+  "name": "sudocode",
+  "displayName": "SudoCode",
+  "description": "",
+  "repository": {},
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "SudoCode",
+      "aliases": ["SudoCode", "SudoCode"],
+      "extensions": [".sudocode"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "SudoCode",
+      "scopeName": "source.sudocode",
+      "path": "./syntaxes/SudoCode.tmLanguage.json"
+    }]
+  }
+}
