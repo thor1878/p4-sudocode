@@ -50,3 +50,4 @@ ID: [A-Za-z]+;
 WHITESPACE: ('\r'? '\n' ' '*)+;
 
 IGNORE: ' ' -> skip;
+COMMENT: '#' (~('\r'|'\n'))* -> skip;

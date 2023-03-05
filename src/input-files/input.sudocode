@@ -1,5 +1,5 @@
 rule between(min, max) expects cell:
-    for i from 1 to 9:
+    for i from 1 to 9: #Check that multiple dedents are working
         apply $cell >= min and $cell <= max
         
 
